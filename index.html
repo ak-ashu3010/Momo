@@ -1,0 +1,1891 @@
+
+<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>Please Bae, Last Chance ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            #ffd9e9 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            #ded4ff 0%,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #ffe7f0,
+            #eee6ff
+        );
+
+    color:#4b2942;
+
+    overflow:hidden;
+}
+
+.app{
+    width:100%;
+    min-height:100svh;
+
+    padding:14px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+}
+
+
+.card{
+    width:100%;
+    max-width:720px;
+
+    min-height:min(
+        720px,
+        94svh
+    );
+
+    background:
+        rgba(255,255,255,.70);
+
+    border:
+        1px solid
+        rgba(255,255,255,.8);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-radius:34px;
+
+    box-shadow:
+        0 25px 80px
+        rgba(80,40,80,.18);
+
+    overflow:hidden;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+.screen{
+    width:100%;
+    min-height:100%;
+
+    padding:
+        35px 24px;
+
+    display:none;
+
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    animation:
+        screenIn .65s ease;
+}
+
+.screen.active{
+    display:flex;
+}
+
+@keyframes screenIn{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(25px)
+            scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+.character{
+    font-size:
+        clamp(
+            75px,
+            18vw,
+            125px
+        );
+
+    margin-bottom:8px;
+
+    animation:
+        characterFloat
+        2.3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes characterFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+
+h1{
+    font-size:
+        clamp(
+            38px,
+            10vw,
+            70px
+        );
+
+    line-height:1.05;
+
+    color:#ed4b82;
+
+    margin:
+        8px 0
+        16px;
+
+    text-shadow:
+        0 5px 20px
+        rgba(237,75,130,.15);
+}
+
+h2{
+    font-size:
+        clamp(
+            27px,
+            7vw,
+            42px
+        );
+
+    color:#613751;
+
+    margin-bottom:15px;
+}
+
+p{
+    width:100%;
+    max-width:550px;
+
+    font-size:
+        clamp(
+            16px,
+            4.3vw,
+            19px
+        );
+
+    line-height:1.7;
+
+    margin:
+        7px auto;
+}
+
+.highlight{
+    color:#ed4b82;
+    font-weight:800;
+}
+
+
+button{
+
+    border:0;
+    outline:0;
+
+    font-family:inherit;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    touch-action:manipulation;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.primary{
+
+    min-height:55px;
+
+    padding:
+        15px 28px;
+
+    margin-top:22px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f89,
+            #ef4f9b
+        );
+
+    color:white;
+
+    font-size:
+        clamp(
+            15px,
+            4vw,
+            18px
+        );
+
+    box-shadow:
+        0 12px 25px
+        rgba(239,79,155,.30);
+}
+
+.primary:hover{
+    transform:
+        translateY(-3px)
+        scale(1.03);
+}
+
+.primary:active{
+    transform:scale(.95);
+}
+
+
+.choice-area{
+
+    width:100%;
+    max-width:580px;
+
+    min-height:190px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:12px;
+
+    position:relative;
+
+    margin-top:12px;
+}
+
+.noBtn{
+
+    background:#f1eef2;
+
+    color:#655d64;
+
+    min-height:52px;
+
+    padding:
+        13px 23px;
+
+    border-radius:999px;
+
+    font-size:16px;
+
+    box-shadow:
+        0 7px 20px
+        rgba(0,0,0,.08);
+}
+
+.noBtn:active{
+    transform:scale(.94);
+}
+
+#lastChance{
+    position:relative;
+    z-index:10;
+
+    transform-origin:center;
+
+    transition:
+        transform .5s
+        cubic-bezier(
+            .17,
+            .67,
+            .35,
+            1.3
+        );
+}
+
+
+#reaction{
+
+    min-height:35px;
+
+    color:#ed4b82;
+
+    font-weight:700;
+}
+
+
+.memory-wrapper{
+
+    width:100%;
+
+    position:relative;
+
+    margin:
+        8px 0
+        4px;
+}
+
+.memories{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:
+        18px 25px
+        28px;
+
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    scroll-behavior:smooth;
+
+    scroll-snap-type:
+        x mandatory;
+
+    -webkit-overflow-scrolling:
+        touch;
+
+    touch-action:
+        pan-x;
+
+    overscroll-behavior-x:
+        contain;
+
+    scrollbar-width:none;
+
+    user-select:none;
+
+    cursor:grab;
+}
+
+.memories::-webkit-scrollbar{
+    display:none;
+}
+
+.memories.dragging{
+    cursor:grabbing;
+
+    scroll-behavior:auto;
+
+    scroll-snap-type:none;
+}
+
+.memory{
+
+    flex:
+        0 0 145px;
+
+    scroll-snap-align:
+        center;
+
+    background:white;
+
+    padding:
+        8px 8px 13px;
+
+    border-radius:9px;
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,.13);
+
+    transform:
+        rotate(-3deg);
+
+    transition:
+        transform .3s ease;
+
+    pointer-events:none;
+
+    flex-shrink:0;
+}
+
+.memory:nth-child(2){
+    transform:
+        rotate(4deg);
+}
+
+.memory:nth-child(3){
+    transform:
+        rotate(-4deg);
+}
+
+.memory img{
+
+    display:block;
+
+    width:100%;
+
+    height:125px;
+
+    object-fit:cover;
+
+    border-radius:5px;
+}
+
+.memory span{
+
+    display:block;
+
+    margin-top:7px;
+
+    font-size:12px;
+
+    color:#594451;
+}
+
+.swipe-hint{
+
+    font-size:13px;
+
+    color:#b35c83;
+
+    margin-top:-5px;
+
+    animation:
+        swipeHint
+        1.6s
+        ease-in-out
+        infinite;
+}
+
+@keyframes swipeHint{
+
+    0%,100%{
+        opacity:.45;
+        transform:translateX(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:translateX(8px);
+    }
+}
+
+.heart{
+
+    position:fixed;
+
+    bottom:-40px;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    animation:
+        heartUp
+        linear
+        forwards;
+}
+
+@keyframes heartUp{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(0)
+            rotate(0)
+            scale(.7);
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translateY(-115svh)
+            rotate(360deg)
+            scale(1.25);
+    }
+}
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(44,21,42,.65);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+
+    z-index:100;
+}
+
+.overlay.show{
+    display:flex;
+}
+
+.letter{
+
+    width:
+        min(
+            94vw,
+            620px
+        );
+
+    max-height:88svh;
+
+    overflow-y:auto;
+
+    background:
+        linear-gradient(
+            rgba(255,250,240,.98),
+            rgba(255,248,239,.98)
+        );
+
+    border-radius:18px;
+
+    padding:
+        clamp(25px,7vw,45px)
+        clamp(20px,7vw,40px);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.35);
+
+    animation:
+        letterOpen
+        .7s
+        cubic-bezier(
+            .17,
+            .67,
+            .35,
+            1.3
+        );
+}
+
+@keyframes letterOpen{
+
+    from{
+        opacity:0;
+
+        transform:
+            scale(.55)
+            rotate(-5deg);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            scale(1)
+            rotate(0);
+    }
+}
+
+.letter h2{
+
+    text-align:center;
+
+    color:#ed4b82;
+
+    font-size:
+        clamp(
+            26px,
+            7vw,
+            38px
+        );
+}
+
+.letter p{
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            16px,
+            4.2vw,
+            18px
+        );
+
+    line-height:1.8;
+
+    color:#49383f;
+}
+
+.signature{
+
+    text-align:right;
+
+    font-style:italic;
+
+    color:#ed4b82;
+}
+
+.floodButton{
+
+    position:fixed;
+
+    min-height:45px;
+
+    padding:
+        11px 17px;
+
+    border-radius:999px;
+
+    background:#ff4f89;
+
+    color:white;
+
+    font-size:
+        clamp(
+            11px,
+            3vw,
+            15px
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(255,79,137,.3);
+
+    z-index:60;
+
+    animation:
+        floodPop
+        .4s
+        ease;
+}
+
+@keyframes floodPop{
+
+    from{
+        transform:
+            scale(0)
+            rotate(-10deg);
+
+        opacity:0;
+    }
+
+    to{
+        transform:
+            scale(1)
+            rotate(0);
+
+        opacity:1;
+    }
+}
+.confetti{
+
+    position:fixed;
+
+    top:-30px;
+
+    width:9px;
+
+    height:18px;
+
+    z-index:200;
+
+    animation:
+        confettiFall
+        linear
+        forwards;
+}
+
+@keyframes confettiFall{
+
+    to{
+
+        transform:
+            translateY(115svh)
+            rotate(720deg);
+    }
+}
+.music{
+
+    position:fixed;
+
+    top:14px;
+
+    right:14px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.92);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.12);
+
+    font-size:20px;
+
+    z-index:150;
+}
+
+@media(min-width:700px){
+
+    .app{
+        padding:30px;
+    }
+
+    .card{
+        min-height:680px;
+    }
+
+    .screen{
+        padding:55px;
+    }
+
+    .choice-area{
+        min-height:210px;
+    }
+
+    .memory{
+        flex-basis:150px;
+    }
+
+    .memory img{
+        height:130px;
+    }
+}
+@media(max-width:600px){
+
+    .app{
+        padding:10px;
+    }
+
+    .card{
+        min-height:94svh;
+
+        border-radius:28px;
+    }
+
+    .screen{
+        padding:
+            25px 15px;
+    }
+
+    .memory-wrapper{
+        width:
+            calc(100% + 10px);
+
+        margin-left:-5px;
+    }
+
+    .memories{
+
+        padding-left:25px;
+        padding-right:25px;
+
+        gap:16px;
+
+        overflow-x:scroll;
+
+        justify-content:flex-start;
+    }
+
+    .memory{
+
+        flex:
+            0 0 145px;
+    }
+
+    .memory img{
+
+        height:125px;
+    }
+
+    .choice-area{
+        min-height:180px;
+    }
+}
+@media(max-height:650px){
+
+    .screen{
+        padding:
+            18px 15px;
+    }
+
+    .character{
+        font-size:70px;
+    }
+
+    h1{
+        font-size:38px;
+    }
+
+    p{
+        line-height:1.5;
+    }
+
+    .primary{
+        margin-top:12px;
+    }
+
+    .memories{
+        padding-top:8px;
+        padding-bottom:18px;
+    }
+
+    .memory{
+        flex-basis:125px;
+    }
+
+    .memory img{
+        height:105px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+<audio
+    id="music"
+    loop
+    preload="auto">
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<button
+    class="music"
+    id="musicBtn"
+    onclick="toggleMusic()">
+
+    🎵
+
+</button>
+<main class="app">
+
+<div class="card">
+<section
+    class="screen active"
+    id="screen1">
+
+    <div class="character">
+        🥺
+    </div>
+
+    <h1>
+        MAHI...
+    </h1>
+
+    <p>
+        I know things aren't okay
+        right now...
+    </p>
+
+    <p>
+        But please give me
+        <span class="highlight">
+            just a little moment.
+        </span>
+    </p>
+
+    <button
+        class="primary"
+        onclick="nextScreen(2)">
+
+        Please listen to me ❤️
+
+    </button>
+
+</section>
+<section
+    class="screen"
+    id="screen2">
+
+    <div class="character">
+        💔
+    </div>
+
+    <h2>
+        I know...
+    </h2>
+
+    <p>
+        I know you're hurt.
+    </p>
+
+    <p>
+        I know saying
+        <span class="highlight">
+            sorry
+        </span>
+        doesn't magically fix everything.
+    </p>
+
+    <p>
+        I'm not here to make excuses.
+        I just want to tell you
+        what's in my heart.
+    </p>
+
+    <button
+        class="primary"
+        onclick="nextScreen(3)">
+
+        Continue 🥺
+
+    </button>
+
+</section>
+<section
+    class="screen"
+    id="screen3">
+
+    <div class="character">
+        🌷
+    </div>
+
+    <h2>
+        Our little memories ❤️
+    </h2>
+
+    <p>
+        Whatever happened between us,
+        these moments were real to me.
+    </p>
+
+
+    <div class="memory-wrapper">
+
+        <div
+            class="memories"
+            id="memorySlider">
+
+            <div class="memory">
+
+                <img
+                    src="photo1.jpg"
+                    alt="Memory 1">
+
+                <span>
+                    Our memory ❤️
+                </span>
+
+            </div>
+
+            <div class="memory">
+
+                <img
+                    src="photo2.jpg"
+                    alt="Memory 2">
+
+                <span>
+                    That smile 🥹
+                </span>
+
+            </div>
+
+            <div class="memory">
+
+                <img
+                    src="photo3.jpg"
+                    alt="Memory 3">
+
+                <span>
+                    Us 💗
+                </span>
+
+            </div>
+            <div class="memory">
+
+                <img
+                    src="photo4.jpg"
+                    alt="Memory 4">
+
+                <span>
+                    Always special ❤️
+                </span>
+
+            </div>
+
+            <div class="memory">
+
+                <img
+                    src="photo5.jpg"
+                    alt="Memory 5">
+
+                <span>
+                    One more memory 🥺
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="swipe-hint">
+            ← swipe to see our memories →
+        </div>
+
+    </div>
+
+
+    <button
+        class="primary"
+        onclick="nextScreen(4)">
+
+        One more thing...
+
+    </button>
+
+</section>
+
+<section
+    class="screen"
+    id="screen4">
+
+    <div class="character">
+        🧸
+    </div>
+
+    <h2>
+        Please Bae...
+    </h2>
+
+    <p>
+        I'm not asking you to forget
+        everything.
+    </p>
+
+    <p>
+        I'm asking for
+        <span class="highlight">
+            one last chance
+        </span>
+        to make things right.
+    </p>
+
+    <p>
+        Mahi...
+        can we try one more time? 🥺❤️
+    </p>
+
+
+    <div class="choice-area">
+
+        <button
+            class="noBtn"
+            id="noBtn"
+            onclick="sayNo()">
+
+            NO 😭
+
+        </button>
+
+
+        <button
+            class="primary"
+            id="lastChance"
+            onclick="accept()">
+
+            ONE LAST CHANCE ❤️
+
+        </button>
+
+    </div>
+
+
+    <p id="reaction">
+
+        Please... 🥺👉👈
+
+    </p>
+
+</section>
+
+</div>
+
+</main>
+<div
+    class="overlay"
+    id="letterOverlay">
+
+
+    <article class="letter">
+
+        <h2>
+            💌 A Letter For Mahi
+        </h2>
+
+
+        <p>
+            Dear Mahi,
+        </p>
+
+
+        <p>
+            I don't know if these words
+            can change anything,
+            but I still wanted to say them.
+        </p>
+
+
+        <p>
+            I'm genuinely sorry for the
+            moments where I hurt you,
+            disappointed you, or made you
+            feel like you weren't important
+            to me.
+        </p>
+
+
+        <p>
+            I don't want to erase what
+            happened.
+            I want to learn from it.
+        </p>
+
+
+        <p>
+            I'm not asking you to forget
+            everything overnight.
+            I'm only asking you to give me
+            one last opportunity to show
+            you that I can do better.
+        </p>
+
+
+        <p>
+            If you decide to give us another
+            chance, I promise I'll value it
+            instead of taking it for granted.
+        </p>
+
+
+        <p>
+            Mahi...
+            <span class="highlight">
+                I still care about you a lot. ❤️
+            </span>
+        </p>
+
+
+        <p
+            style="
+                text-align:center;
+                font-weight:bold;
+            ">
+
+            Please Bae...
+            last chance? 🥺❤️
+
+        </p>
+
+
+        <p class="signature">
+
+            — From someone who still cares ❤️
+
+        </p>
+
+
+        <button
+            class="primary"
+            onclick="closeLetter()">
+
+            ❤️ Okay...
+
+        </button>
+
+    </article>
+
+</div>
+
+
+<script>
+let noClicks = 0;
+
+let chanceScale = 1;
+
+let isDragging = false;
+
+let startX = 0;
+
+let startScrollLeft = 0;
+
+
+const reactions = [
+
+    "Are you really sure? 🥺",
+
+    "Mahi... ek baar aur soch lo na 👉👈",
+
+    "Please bae... 🥹❤️",
+
+    "I KNEW ITTT 😭❤️"
+
+];
+function nextScreen(number){
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
+
+            screen.classList.remove(
+                "active"
+            );
+
+        });
+
+
+    document
+        .getElementById(
+            "screen" + number
+        )
+        .classList.add(
+            "active"
+        );
+}
+function sayNo(){
+
+    noClicks++;
+
+
+    const chance =
+        document.getElementById(
+            "lastChance"
+        );
+
+
+    const no =
+        document.getElementById(
+            "noBtn"
+        );
+
+
+    const reaction =
+        document.getElementById(
+            "reaction"
+        );
+
+
+    if(noClicks <= 4){
+
+        chanceScale += .28;
+
+
+        chance.style.transform =
+            `scale(${chanceScale})`;
+
+        no.style.transform =
+            `scale(${
+                Math.max(
+                    .72,
+                    1 - noClicks * .06
+                )
+            })`;
+
+
+        reaction.innerText =
+            reactions[
+                Math.min(
+                    noClicks - 1,
+                    reactions.length - 1
+                )
+            ];
+
+
+        heartBurst();
+
+    }
+
+
+    if(noClicks === 4){
+
+        reaction.innerHTML =
+            "<b>I KNEW ITTT 😭❤️</b>";
+
+
+        createFloodButtons();
+
+    }
+
+}
+function accept(){
+
+    createConfetti();
+
+
+    setTimeout(() => {
+
+        document
+            .getElementById(
+                "letterOverlay"
+            )
+            .classList.add(
+                "show"
+            );
+
+    },700);
+
+}
+function closeLetter(){
+
+    document
+        .getElementById(
+            "letterOverlay"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+function createHeart(){
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+
+    heart.className =
+        "heart";
+
+
+    const hearts = [
+
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💞",
+        "🌷"
+
+    ];
+
+
+    heart.innerText =
+        hearts[
+            Math.floor(
+                Math.random() *
+                hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 +
+        "vw";
+
+
+    heart.style.fontSize =
+        15 +
+        Math.random() * 23 +
+        "px";
+
+
+    heart.style.animationDuration =
+        4 +
+        Math.random() * 4 +
+        "s";
+
+
+    document.body.appendChild(
+        heart
+    );
+
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    },8000);
+
+}
+
+
+setInterval(
+    createHeart,
+    650
+);
+function heartBurst(){
+
+    for(
+        let i = 0;
+        i < 14;
+        i++
+    ){
+
+        const heart =
+            document.createElement(
+                "div"
+            );
+
+
+        heart.innerText =
+            "❤️";
+
+
+        heart.style.position =
+            "fixed";
+
+        heart.style.left =
+            "50%";
+
+        heart.style.top =
+            "50%";
+
+        heart.style.zIndex =
+            "80";
+
+        heart.style.pointerEvents =
+            "none";
+
+
+        heart.style.fontSize =
+            16 +
+            Math.random() * 15 +
+            "px";
+
+
+        const x =
+            (Math.random() - .5) *
+            420;
+
+
+        const y =
+            (Math.random() - .5) *
+            420;
+
+
+        heart.animate(
+
+            [
+
+                {
+                    transform:
+                        "translate(-50%,-50%) scale(0)",
+
+                    opacity:1
+                },
+
+                {
+                    transform:
+                        `translate(${x}px,${y}px) scale(1.3)`,
+
+                    opacity:0
+                }
+
+            ],
+
+            {
+                duration:900,
+                easing:"ease-out"
+            }
+
+        );
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        },900);
+
+    }
+
+}
+function createFloodButtons(){
+
+    const count =
+        window.innerWidth < 600
+        ? 13
+        : 20;
+
+
+    for(
+        let i = 0;
+        i < count;
+        i++
+    ){
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "floodButton";
+
+
+        button.innerText =
+            "ONE LAST CHANCE ❤️";
+
+
+        button.style.left =
+            Math.random() * 82 +
+            "vw";
+
+
+        button.style.top =
+            Math.random() * 84 +
+            "vh";
+
+
+        button.onclick =
+            accept;
+
+
+        document.body.appendChild(
+            button
+        );
+
+
+        setTimeout(() => {
+
+            button.remove();
+
+        },6500);
+
+    }
+
+}
+function createConfetti(){
+
+    const colors = [
+
+        "#ff4f89",
+        "#ffcc70",
+        "#a78bfa",
+        "#6ee7b7",
+        "#60a5fa"
+
+    ];
+
+
+    for(
+        let i = 0;
+        i < 120;
+        i++
+    ){
+
+        const piece =
+            document.createElement(
+                "div"
+            );
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.style.left =
+            Math.random() * 100 +
+            "vw";
+
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+
+        piece.style.animationDuration =
+            2 +
+            Math.random() * 2 +
+            "s";
+
+
+        piece.style.transform =
+            `rotate(
+                ${Math.random() * 360}deg
+            )`;
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        setTimeout(() => {
+
+            piece.remove();
+
+        },4500);
+
+    }
+
+}
+function toggleMusic(){
+
+    const music =
+        document.getElementById(
+            "music"
+        );
+
+
+    const button =
+        document.getElementById(
+            "musicBtn"
+        );
+
+
+    if(music.paused){
+
+        music.play()
+            .then(() => {
+
+                button.innerText =
+                    "🔊";
+
+            })
+            .catch(() => {
+
+                alert(
+                    "Tap the music button again ❤️"
+                );
+
+            });
+
+    }
+
+    else{
+
+        music.pause();
+
+        button.innerText =
+            "🎵";
+
+    }
+
+}
+const slider =
+    document.getElementById(
+        "memorySlider"
+    );
+slider.addEventListener(
+    "touchstart",
+    function(event){
+
+        isDragging = true;
+
+        startX =
+            event.touches[0].pageX;
+
+        startScrollLeft =
+            slider.scrollLeft;
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+slider.addEventListener(
+    "touchmove",
+    function(event){
+
+        if(!isDragging)
+            return;
+
+
+        const currentX =
+            event.touches[0].pageX;
+
+
+        const distance =
+            startX - currentX;
+
+
+        slider.scrollLeft =
+            startScrollLeft +
+            distance;
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+slider.addEventListener(
+    "touchend",
+    function(){
+
+        isDragging = false;
+
+    }
+);
+slider.addEventListener(
+    "mousedown",
+    function(event){
+
+        isDragging = true;
+
+        slider.classList.add(
+            "dragging"
+        );
+
+
+        startX =
+            event.pageX -
+            slider.offsetLeft;
+
+
+        startScrollLeft =
+            slider.scrollLeft;
+
+    }
+);
+
+
+slider.addEventListener(
+    "mouseleave",
+    function(){
+
+        isDragging = false;
+
+        slider.classList.remove(
+            "dragging"
+        );
+
+    }
+);
+
+
+slider.addEventListener(
+    "mouseup",
+    function(){
+
+        isDragging = false;
+
+        slider.classList.remove(
+            "dragging"
+        );
+
+    }
+);
+
+
+slider.addEventListener(
+    "mousemove",
+    function(event){
+
+        if(!isDragging)
+            return;
+
+
+        event.preventDefault();
+
+
+        const x =
+            event.pageX -
+            slider.offsetLeft;
+
+
+        const distance =
+            (x - startX) * 1.4;
+
+
+        slider.scrollLeft =
+            startScrollLeft -
+            distance;
+
+    }
+);
+for(
+    let i = 0;
+    i < 5;
+    i++
+){
+
+    setTimeout(
+        createHeart,
+        i * 500
+    );
+
+}
+
+</script>
+
+</body>
+</html>
